@@ -9,6 +9,12 @@ default: &default
   check_yarn_integrity: false
   webpack_compile_output: true
 
+  node:
+    __dirname: true
+    __filename: true
+    global: true
+
+
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
   resolved_paths: []
@@ -87,7 +93,7 @@ production:
   <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
-  compile: false
+  compile: true
 
   # Extract and emit a css file
   extract_css: true
